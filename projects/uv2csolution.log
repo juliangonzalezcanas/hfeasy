@@ -1,0 +1,15 @@
+0 out of 1 target(s) converted
+Error: 2 error(s), 1 warning(s):
+Errors:
+	The target "LPB130" is configured for unsupported compiler toolchain (GCC). Only Arm Compiler 6 is supported.
+	The target "LPB130" is configured to use Arm Compiler 5.
+	CMSIS csolution projects support Arm Compiler 6 only.
+	For details on how to manually migrate to AC6, see
+	https://developer.arm.com/documentation/100068/0621/Migrating-from-Arm-Compiler-5-to-Arm-Compiler-for-Embedded-6
+Warnings:
+	The target "LPB130" is configured with following user commands which should be run manually:
+            After Build/Rebuild
+                $K/gcc-arm-none-eabi-5_4-2016q3-20160926-win32/bin/arm-none-eabi-objcopy -O binary ./build_lpxx30/HFEASY.elf ./build_lpxx30/HFEASY.bin
+                ../tools/gen_upgrade_bin.exe LPB230 lzma  ../tools/bootloader_lpb130.bin ./build_lpxx30/HFEASY.bin ./build_lpxx30/HFEASY_IMAGE.bin ./build_lpxx30/HFEASY_UPGRADE.bin
+
+Process failed with exit code 2

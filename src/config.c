@@ -56,6 +56,9 @@ const int gpio_default_config[DEVICE_END - 1][CONFIG_GPIO_CONFIG + 1]	=
 
 	/* (Lidl) Silvercrest SWS-A1 */
 	{ 44, 43, 11, 45, 0, 0, 0, 0, 0, 0, HFM_TYPE_LPB100, GPIO_INV_LED1 | GPIO_INV_LED2},
+
+	/*Solid Device*/
+	{5, 8, 4, 7, 0, 0, 0, 0, 0, 0, HFM_TYPE_LPT100F, 0}
 };
 
 #elif defined(__LPXX30__)
@@ -235,6 +238,7 @@ static const char *config_page =
 	"<option %s value=5>g-homa</option>"
 	"<option %s value=6>wiwo-s20</option>"
 	"<option %s value=7>sws-a1</option>"
+	"<option %s value=8>Solidmation</option>"
 #elif defined(__LPXX30__)
 	"<option %s value=1>plug</option>"
 #endif
@@ -352,6 +356,7 @@ static void USER_FUNC httpd_page_config(char *url, char *rsp)
 		state.cfg.device == 5 ? "selected" : "",
 		state.cfg.device == 6 ? "selected" : "",
 		state.cfg.device == 7 ? "selected" : "",
+		state.cfg.device == 8 ? "selected" : "",
 #endif
 		state.cfg.friendly_name, state.module_name,
 		state.cfg.httpd_settings & HTTPD_AUTH ? "checked" : "",
@@ -364,6 +369,7 @@ static void USER_FUNC httpd_page_config(char *url, char *rsp)
 		state.cfg.led[0] == 5 ? "selected" : "",
 		state.cfg.led[0] == 6 ? "selected" : "",
 		state.cfg.led[0] == 7 ? "selected" : "",
+		state.cfg.led[0] == 8 ? "selected" : "",
 		state.cfg.led[1] == 0 ? "selected" : "",
 		state.cfg.led[1] == 1 ? "selected" : "",
 		state.cfg.led[1] == 2 ? "selected" : "",
@@ -372,6 +378,7 @@ static void USER_FUNC httpd_page_config(char *url, char *rsp)
 		state.cfg.led[1] == 5 ? "selected" : "",
 		state.cfg.led[1] == 6 ? "selected" : "",
 		state.cfg.led[1] == 7 ? "selected" : "",
+		state.cfg.led[1] == 8 ? "selected" : "",
 		(int)state.cfg.pwron_state
 	);
 

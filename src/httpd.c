@@ -1,6 +1,9 @@
 //#include <unistd.h>
 #include "hfeasy.h"
 
+#include <unistd.h>
+
+
 #define HTTP_SERVER_PORT	8080
 #define HTTPD_MAX_PAGES		20
 
