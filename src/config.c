@@ -107,80 +107,7 @@ void USER_FUNC reboot(void)
 static const char *config_page_save =
 	"<!DOCTYPE html><html><head>"\
 	"<meta http-equiv=\"refresh\" content=\"5;url=/\" />"\
-	"<title>HFeasy config v%d.%d</title><link rel=\"stylesheet\" href=\"styles.css\"><style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f0f0f0;
-        color: #333;
-        margin: 0;
-        padding: 0;
-    }
-    h1 {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px;
-        text-align: center;
-        margin: 0;
-    }
-    hr {
-        border: none;
-        height: 1px;
-        background-color: #ddd;
-    }
-    button {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin: 10px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    #btn_on {
-        background-color: #4CAF50;
-        color: white;
-    }
-    #btn_off {
-        background-color: #f44336;
-        color: white;
-    }
-    table {
-        width: 100;
-        border-collapse: collapse;
-        margin: 20px 0;
-    }
-    td {
-        padding: 10px;
-        text-align: center;
-        background-color: #fff;
-        border: 1px solid #ddd;
-    }
-    td a {
-        color: #4CAF50;
-        text-decoration: none;
-        font-weight: bold;
-    }
-    td a:hover {
-        text-decoration: underline;
-    }
-    form {
-        text-align: center;
-        margin: 20px 0;
-    }
-    input[type=\"submit\"] {
-        font-size: 16px;
-        padding: 10px 20px;
-        margin: 10px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        background-color: #2196F3;
-        color: white;
-    }
-    input[type=\"submit\"]:hover {
-        background-color: #0b7dda;
-    }
-</style>
-</head><body>"\
+	"<title>HFeasy config v%d.%d</title></head><body>"\
 	". Please wait...</body></html>";
 
 static void USER_FUNC httpd_page_save(char *url, char *rsp)
@@ -258,8 +185,83 @@ static void USER_FUNC httpd_page_firmware(char *url, char *rsp)
 #endif
 
 static const char *main_page =
-	"<!DOCTYPE html><html><head><title>HFeasy v%d.%d</title><link rel=\"stylesheet\" href=\"/styles.css\"></head><body>"\
-	"<h1>HFeasy v%d.%d</h1><hr>"\
+	"<!DOCTYPE html><html><head><title>HFeasy v%d.%d</title>"\
+	"<style>"\
+    "body {"\
+        "font-family: Arial, sans-serif;"\
+        "background-color: #f0f0f0;"\
+        "color: #333;"\
+        "margin: 0;"\
+        "padding: 0;"\
+    "}"\
+    "h1 {"\
+        "background-color: #4CAF50;"\
+        "color: white;"\
+        "padding: 10px;"\
+        "text-align: center;"\
+        "margin: 0;"\
+    "}"\
+    "hr {"\
+        "border: none;"\
+        "height: 1px;"\
+        "background-color: #ddd;"\
+    "}"\
+    "button {"\
+        "font-size: 16px;"\
+        "padding: 10px 20px;"\
+        "margin: 10px;"\
+        "border: none;"\
+        "cursor: pointer;"\
+        "border-radius: 5px;"\
+    "}"\
+    "#btn_on {"\
+        "background-color: #4CAF50;"\
+        "color: white;"\
+    "}"\
+    "#btn_off {"\
+        "background-color: #f44336;"\
+        "color: white;"\
+    "}"\
+    "table {"\
+        "width: 100;"\
+        "border-collapse: collapse;"\
+        "margin: 20px 0;"\
+    "}"\
+    "td {"\
+        "padding: 10px;"\
+        "text-align: center;"\
+        "background-color: #fff;"\
+        "border: 1px solid #ddd;"\
+    "}"\
+    "td a {"\
+        "color: #4CAF50;"\
+        "text-decoration: none;"\
+        "font-weight: bold;"\
+    "}"\
+    "td a:hover {"\
+        "text-decoration: underline;"\
+    "}"\
+    "form {"\
+        "text-align: center;"\
+        "margin: 20px 0;"\
+    "}"\
+    "input[type=\"submit\"] {"\
+        "font-size: 16px;"\
+        "padding: 10px 20px;"\
+        "margin: 10px;"\
+        "border: none;"\
+        "cursor: pointer;"\
+        "border-radius: 5px;"\
+        "background-color: #2196F3;"\
+        "color: white;"\
+    "}"\
+    "input[type=\"submit\"]:hover {"\
+        "background-color: #0b7dda;"\
+    "}"\
+	"</style>"\
+	"</head><body>"\
+	"<h1>HFeasy v%d.%d</h1>"\
+	"<hr>"\
 	"<button id=\"btn_on\">ON</button>"\
 	"<button id=\"btn_off\">OFF</button>"\
 	"<hr>"\
