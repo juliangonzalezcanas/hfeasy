@@ -23,7 +23,7 @@
 #include "i2c.h"
 #include "dimmer.h"
 #include "network.h"
-
+#include "echobot.h"
 
 #define HFEASY_VERSION_MAJOR	1
 #define HFEASY_VERSION_MINOR	1

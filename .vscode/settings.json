@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "gpio.h": "c",
+        "httpd.h": "c",
+        "buzzer.h": "c",
+        "pthread.h": "c",
+        "stdio.h": "c",
+        "stdlib.h": "c",
+        "telebot.h": "c"
+    }
+}

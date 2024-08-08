@@ -493,6 +493,26 @@
               <FileType>1</FileType>
               <FilePath>..\src\network.c</FilePath>
             </File>
+            <File>
+              <FileName>echobot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\echobot.c</FilePath>
+            </File>
+            <File>
+              <FileName>telebot.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\telebot.c</FilePath>
+            </File>
+            <File>
+              <FileName>telebot-core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\telebot-core.c</FilePath>
+            </File>
+            <File>
+              <FileName>telebot-parser.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\src\telebot-parser.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

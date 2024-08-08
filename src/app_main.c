@@ -48,5 +48,6 @@ int USER_FUNC app_main(void)
 	timer_init();
 	httpd_init();
 	mqttcli_init();
+	echobot_init();
 	return 1;
 }
