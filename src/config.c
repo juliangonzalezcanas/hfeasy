@@ -187,7 +187,14 @@ static void USER_FUNC httpd_page_firmware(char *url, char *rsp)
 static const char *main_page =
 	"<!DOCTYPE html><html><head><title>HFeasy v%d.%d</title>"\
 	"<style>"\
-    "body {"\
+	"div {"\
+	"	display: flex;"\
+	"	align-items: center;"\
+	"	justify-content: center;"\
+	"	flex-direction: row;"\
+	"	background-color: #3642e3;"\
+	"}"\
+	"body {"\
         "font-family: Arial, sans-serif;"\
         "background-color: #f0f0f0;"\
         "color: #333;"\
@@ -195,7 +202,6 @@ static const char *main_page =
         "padding: 0;"\
     "}"\
     "h1 {"\
-        "background-color: #4CAF50;"\
         "color: white;"\
         "padding: 10px;"\
         "text-align: center;"\
@@ -215,7 +221,7 @@ static const char *main_page =
         "border-radius: 5px;"\
     "}"\
     "#btn_on {"\
-        "background-color: #4CAF50;"\
+        "background-color: #3642e3;"\
         "color: white;"\
     "}"\
     "#btn_off {"\
@@ -234,7 +240,7 @@ static const char *main_page =
         "border: 1px solid #ddd;"\
     "}"\
     "td a {"\
-        "color: #4CAF50;"\
+        "color: #3642e3;"\
         "text-decoration: none;"\
         "font-weight: bold;"\
     "}"\
@@ -260,7 +266,10 @@ static const char *main_page =
     "}"\
 	"</style>"\
 	"</head><body>"\
-	"<h1>HFeasy v%d.%d</h1>"\
+	"<div>"\
+	"<img src=\"data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAAAAAAD/2wBDAAMCAgICAgMCAgIDAwMDBAYEBAQEBAgGBgUGCQgKCgkICQkKDA8MCgsOCwkJDRENDg8QEBEQCgwSExIQEw8QEBD/2wBDAQMDAwQDBAgEBAgQCwkLEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBD/wAARCAAZABQDAREAAhEBAxEB/8QAFwAAAwEAAAAAAAAAAAAAAAAABQcIBv/EACgQAAEEAgICAQIHAAAAAAAAAAECAwQFBhEHIQASMQgTFCIjJTN0sv/EABoBAAMAAwEAAAAAAAAAAAAAAAEFBgADBAf/xAApEQACAQMEAQMEAwEAAAAAAAABAgMEBREAEiExBhNRcRQiQYEyQqHB/9oADAMBAAIRAxEAPwBq4XWTshzHM52cck5G2ZeROs47WNWUtl1xLExRfCWwQl5gtaBUnpOiPZKvInznzE263y0VmhQTRRJ6krFGVWmYIvTZSZPuYRvy3DbWXQstrapqzNXTNsaRgiDcCQgJPGMMh4BYcDkZB1luSONeXWrdKOIuTsvuq5iyTSTXpFi+Psz1PupUlSt+vq2EoB9d632fb2ArrD5JSUEr0HlFNG05BKeiMZwgKx7S5YSyhXkUsQpHA60kudurJgJrTO/pg4beTxliC2QANqZCnAJz3ppcG2OQ19Hd1L2Y3tmIFwWUyZ0lZdXuJGWdgk+o9lq0nfW9d+LYLpLcaWKtkiWJpAxKISVXEjoAD/bAUZbjcckAA6d0kHoF4d5cKQNzdnKqf1yevx1qTr69FbzxkgsnbN2ueu7CFLahSXG3/wAMt9RUlpSe06UEr0Oj6nfRPnpNys7VviaNRCNahFWWNpEUp6q8AuG4OVJTceRkEEEDUCtaIL5IJixjLMrBSQ209hccjBwcDg454J1vMQ5k5lwaqxakrcXs6opm/uEyVRvyET44cbW0pxPSnVp0sqUCkqCyNjZ8gp7J4tVXK63da+GpLBJEj+pQGOZMkgMSRGhdVCDB2/cDnONUMNzvFPTUlJ9O8WCVZvTYhkOMHGMsQCSTkZ4xjvTU+myrsafGMjqLR0rlwsmlsPEqJ7S0z1vZ+Boa2da1s6833O6Ut6WnudGuI5okdQBj+QyfwOzk9AnOSATjTGy0stFHLTTHLI7An4x/zSr5H4y5HxvlG8csuD5b0dy4kPC6jxprilsuPKWHUqYWASEq1+XRIGj5f0F1tzWxKSqk6XBRkypx8qwIPfPXtqUrrZWiueeKLILEhgeefggg6CmFfSILsfGKCxyCbEfS2uOxBuWXdBWvVa/uaCgnRO+zs97+QR45uBkSEAjPEcTf4Izj4PI9taxDdSpEe8kH3df9LDVJ/TJxXyQnAZ0q1wiVQuzLh99MWStaFlJbaHv+sSsglKuyfkHyTv5hrKzdR8xhVUcbeh+FwMAdDgaqrHFNS0u2pGGJJxnPfucnn96tAecmmWhlH/JZ/wB9z/KPM0Tokr58zQ1//9k=\"/>"\
+	"<h1>Polimation v%d.%d</h1>"\
+	"</div>"\
 	"<hr>"\
 	"<button id=\"btn_on\">ON</button>"\
 	"<button id=\"btn_off\">OFF</button>"\
