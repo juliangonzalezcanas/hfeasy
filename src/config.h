@@ -60,6 +60,10 @@ struct hfeasy_config {
 	char      cron[100];
 	
 	uint8_t   pwron_state;
+
+	/* telegram */
+
+	char token[255];
 };
 
 struct hfeasy_state {

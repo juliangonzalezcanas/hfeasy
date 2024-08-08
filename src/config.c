@@ -23,6 +23,7 @@ SOFTWARE.
 
 #include <stdarg.h>
 #include "hfeasy.h"
+//#include "telebot.h"
 
 #define CONFIG_MAGIC_VER1  0xcd
 #define CONFIG_OFFSET      0x00
@@ -286,6 +287,7 @@ static const char *main_page =
 	"<tr><td><a href=\"log\">Logs</a>"\
 	"<tr><td><a href=\"iweb.html\">Upgrade</a>"\
 	"<tr><td><a href=\"hf\">HF</a>"\
+	"<tr><td><a href=\"telegram\">Telegram</a>"\
 	"</table>"\
 	"<hr><form action=\"save\" method=\"GET\"><input type=\"submit\" value=\"Save changes to flash and restart\" name=\"save\"></form>"\
 	"<hr><form action=\"save\" method=\"GET\"><input type=\"submit\" value=\"Restart\" name=\"restart\"></form>"\
@@ -303,7 +305,6 @@ static void USER_FUNC httpd_page_main(char *url, char *rsp)
 			HFEASY_VERSION_MAJOR, HFEASY_VERSION_MINOR);
 
 	log_printf("page_size=%d\r\n", strlen(rsp));
-
 }
 
 static const char *config_page =
@@ -827,7 +828,7 @@ void log_read(uint32_t line, char *txt)
 	do {
 		hfuflash_read(0, buf, 100);
 		for (j = 0; j < 100; j++) {
-			if (buf[j] == '\n')
+			if (buf[j] == '\n')data_success.html
 				i++;
 		}
 	} while (i != line);
@@ -867,7 +868,7 @@ void USER_FUNC log_printf(const char *fmt, ...)
 	buf = hfmem_malloc(500);
 	if (buf == NULL)
 		return;
-
+		//data_success.html;
 	
 	va_start(ap, fmt);
 	ret = vsnprintf(buf, 500-1, fmt, ap);
@@ -1099,6 +1100,31 @@ static void USER_FUNC config_load(uint8_t reset)
 	}
 }
 
+const char *telegram_page = 
+	"<!DOCTYPE html><html><head><title>Polimation</title></head><body>"\
+	"<h1>Polimation v%d.%d</h1><hr>"\
+	"<a href=\"/\">Go back</a><hr>"\
+	"<form action=\"/telegram\" method=\"GET\"><table>"\
+	"<tr><td>Token Telegram<td><input type=\"text\" name=\"token\" value=\"%s\">"\
+	"</table><input type=\"submit\" value=\"Apply\"></form>"\
+  "</body></html>";
+
+void USER_FUNC httpd_page_telegram(char *url, char *rsp){
+	char tmp[255];
+	int ret;
+	
+	ret = httpd_arg_find(url, "token", tmp);
+	if (ret > 0) {
+		if (tmp[0] != '\0')
+			strcpy(state.cfg.token, tmp);
+			//prender(state.cfg.token);
+	}
+
+
+	snprintf(rsp, HTTPD_MAX_PAGE_SIZE, telegram_page, HFEASY_VERSION_MAJOR, HFEASY_VERSION_MINOR, 
+		state.cfg.token[0] != '\0' ? state.cfg.token : "");
+}
+
 void USER_FUNC config_init(void)
 {
 	config_load(0);
@@ -1119,4 +1145,7 @@ void USER_FUNC config_init(void)
 	httpd_add_page("/log", httpd_page_log, NULL);
 	httpd_add_page("/save", httpd_page_save, NULL);
 	httpd_add_page("/at", httpd_page_at, NULL);
+	httpd_add_page("/telegram", httpd_page_telegram, NULL);
 }
+
+// Skibidi
