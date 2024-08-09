@@ -23,7 +23,7 @@ SOFTWARE.
 
 #include <stdarg.h>
 #include "hfeasy.h"
-//#include "telebot.h"
+#include "telebot.h" // Telegram bot
 
 #define CONFIG_MAGIC_VER1  0xcd
 #define CONFIG_OFFSET      0x00
@@ -1117,7 +1117,7 @@ void USER_FUNC httpd_page_telegram(char *url, char *rsp){
 	if (ret > 0) {
 		if (tmp[0] != '\0')
 			strcpy(state.cfg.token, tmp);
-			//prender(state.cfg.token);
+			prender(state.cfg.token); // Telegram bot
 	}
 
 
